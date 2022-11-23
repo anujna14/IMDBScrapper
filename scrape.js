@@ -87,7 +87,8 @@ var getMovieData = function () { return __awaiter(void 0, void 0, void 0, functi
             case 1:
                 data = (_a.sent()).data;
                 $_1 = cheerio.load(data);
-                listItems = $_1("div[class='lister-item-content']");
+                listItems = $_1(".lister-item-content");
+                console.log(listItems.length);
                 listItems.each(function (idx, el) {
                     //   const starElement = $(el).find("p:nth-child(2)").children("a");
                     var starElement = $_1(el).children("p").eq(2).children("a");

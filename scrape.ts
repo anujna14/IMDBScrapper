@@ -57,7 +57,8 @@ const getMovieData = async () => {
   try {
     const { data } = await axios.get(url);
     const $ = cheerio.load(data);
-    const listItems = $("div[class='lister-item-content']");
+    const listItems = $(".lister-item-content");
+    // console.log(listItems.length)
 
     listItems.each((idx: number, el: any) => {
       //   const starElement = $(el).find("p:nth-child(2)").children("a");
